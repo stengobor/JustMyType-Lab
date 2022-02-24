@@ -8,7 +8,8 @@ h1 {
     text-align: center;
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 600;
-    color: darkmagenta;
+    color: darkorange;
+    text-decoration: underline;
 }
 
 #btn-submit {
@@ -19,8 +20,9 @@ h1 {
 
   
 #prompt-container {
-    font-family: Courier New, Courier, monospace;
+    font-family: Montserrat, sans-serif;
     font-size: 24px;
+    font-weight: 300;
     letter-spacing: 3px;
 }
   
@@ -32,26 +34,38 @@ h1 {
     background-color: yellow;
 }
   
-  .keyboard-container {
+.keyboard-container {
     margin-top: 200px;
-  }
+}
   
-  #target-letter {
-    font-size: 38px;  
-  }
+#target-letter {
+    font-size: 55px;
+    color: red;  
+}
+
+#sentence {
+    font-size: 25px;
+    color: red;
+}
   
-  .keys-row {
+.keys-row {
     margin-top: 40px;
     padding: 10px 0;
-  }
+}
   
-  #feedback {
+#feedback {
     font-size: 20px;
-  }
-  .glyphicon-ok {
+}
+.glyphicon-ok {
     color: #1DA237
-  }
+}
   
-  .glyphicon-remove {
+.glyphicon-remove {
     color : #CD2626
-  }
+}
+
+.key {
+    color: white;
+    background-color: rgb(0, 38, 255);
+    border: 4px solid rgb(121, 133, 241);
+}
