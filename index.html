@@ -1,15 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Just My Type Lab</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="app.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,300;0,400;0,500;0,600;0,900;1,500;1,800&display=swap"
+    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script scr="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
+
 <body>
     
+    <h1>Let's Play a Typing Game on My Cute Keyboard</h1>
+
+    <div class="container" id="target">
+		<div class="row col-md-12" id="prompt-container">
+			<div class="row col-xs-12" id="yellow-block"></div>
+			<div class="row col-lg-12" id="sentence"></div>
+			<div class="row col-lg-12 text-center" id="feedback"></div>
+			<div class="row col-lg-12 text-center" id="target-letter">
+            </div>
+		</div>
+    </div>
+    <!-- <div class="container" id="sentence">
+        <textarea id="target-word"></textarea>
+    </div> -->
+
+    <div class="keyboard">
+
+        <div class="keyboard-keys" id="keyboard-lowercase-container">
+            <button type="button" id="try" class="keyboard-key">`</button>
+            <button type="button" class="keyboard-key">1</button>
+            <button type="button" class="keyboard-key">2</button>
+            <button type="button" class="keyboard-key">3</button>
+            <button type="button" class="keyboard-key">4</button>
+            <button type="button" class="keyboard-key">5</button>
+            <button type="button" class="keyboard-key">6</button>
+            <button type="button" class="keyboard-key">7</button>
+            <button type="button" class="keyboard-key">8</button>
+            <button type="button" class="keyboard-key">9</button>
+            <button type="button" class="keyboard-key">0</button>
+            <button type="button" class="keyboard-key">-</button>
+            <button type="button" class="keyboard-key">=</button>
+            <button type="button" class="keyboard-key keyboard-key-wide">
+                <i class="material-icons">backspace</i>
+            </button>
+        </div>
+
+        <div class="keyboard-keys" id="keyboard-lowercase-container">
+            <button type="button" class="keyboard-key keyboard-key-wide">
+                <i class="material-icons">tab bar</i>
+            </button>
+            <button type="button" class="keyboard-key">q</button>
+            <button type="button" class="keyboard-key">w</button>
+            <button type="button" class="keyboard-key">e</button>
+            <button type="button" class="keyboard-key">r</button>
+            <button type="button" class="keyboard-key">t</button>
+            <button type="button" class="keyboard-key">y</button>
+            <button type="button" class="keyboard-key">u</button>
+            <button type="button" class="keyboard-key">i</button>
+            <button type="button" class="keyboard-key">o</button>
+            <button type="button" class="keyboard-key">p</button>
+            <button type="button" class="keyboard-key">[</button>
+            <button type="button" class="keyboard-key">]</button>
+            <button type="button" class="keyboard-key">\</button>
+        </div>
+
+        <div class="keyboard-keys" id="keyboard-lowercase-container">
+            <button type="button" class="keyboard-key keyboard-key-activatable keyboard-key-active keyboard-key-wide">
+                <i class="material-icons">keyboard_capslock</i>
+            </button>
+            <button type="button" class="keyboard-key">a</button>
+            <button type="button" class="keyboard-key">s</button>
+            <button type="button" class="keyboard-key">d</button>
+            <button type="button" class="keyboard-key">f</button>
+            <button type="button" class="keyboard-key">g</button>
+            <button type="button" class="keyboard-key">h</button>
+            <button type="button" class="keyboard-key">j</button>
+            <button type="button" class="keyboard-key">k</button>
+            <button type="button" class="keyboard-key">l</button>
+            <button type="button" class="keyboard-key">;</button>
+            <button type="button" class="keyboard-key">'</button>
+            <button type="button" class="keyboard-key keyboard-key-wide">Enter</button>
+        </div>
+
+        <div class="keyboard-keys" id="keyboard-lowercase-container">
+            <button type="button" class="keyboard-key keyboard-key-wide">Shift</button>
+            <button type="button" class="keyboard-key">z</button>
+            <button type="button" class="keyboard-key">x</button>
+            <button type="button" class="keyboard-key">c</button>
+            <button type="button" class="keyboard-key">v</button>
+            <button type="button" class="keyboard-key">b</button>
+            <button type="button" class="keyboard-key">n</button>
+            <button type="button" class="keyboard-key">m</button>
+            <button type="button" class="keyboard-key">,</button>
+            <button type="button" class="keyboard-key">.</button>
+            <button type="button" class="keyboard-key">/</button>
+            <button type="button" class="keyboard-key keyboard-key-wide">Shift</button>
+        </div>
+
+        <div class="keyboard-keys" id="keyboard-lowercase-container">
+            <button type="button" class="keyboard-key">ctrl</button>
+            <button type="button" class="keyboard-key">fn</button>
+            <button type="button" class="keyboard-key">HP</button>
+            <button type="button" class="keyboard-key">alt</button>
+            <button type="button" class="keyboard-key keyboard-key-exwide">
+                <i class="material-icons">spacebar</i>
+            </button>
+            <button type="button" class="keyboard-key">alt</button>
+            <button type="button" class="keyboard-key">ctrl</button>
+        </div>
+
+        <div class="keyboard-keys">
+            <button type="button" class="keyboard-key keyboard-key-wide keyboard-key-dark">
+                <i class="material-icons">check_circle</i>
+            </button>
+        </div>
+
+        <div class="keyboard-keys">
+            <button type="button" class="keyboard-key keyboard-key-wide keyboard-key-exwide" id="btn-play">One More
+                Time!</button>
+        </div>
+
+        <div class="keyboard-keys keyboard-container" id="keyboard-shift-container">
+            <button type="button" class="keyboard-key keyboard-key-wide">Shift</button>
+            <button type="button" class="keyboard-key">Z</button>
+            <button type="button" class="keyboard-key">X</button>
+            <button type="button" class="keyboard-key">C</button>
+            <button type="button" class="keyboard-key">V</button>
+            <button type="button" class="keyboard-key">B</button>
+            <button type="button" class="keyboard-key">N</button>
+            <button type="button" class="keyboard-key">M</button>
+            <button type="button" class="keyboard-key"><</button>
+            <button type="button" class="keyboard-key">></button>
+            <button type="button" class="keyboard-key">?</button>
+            <button type="button" class="keyboard-key keyboard-key-wide">Shift</button>
+        </div>
+
+        <div class="keyboard-keys keyboard-container" id="keyboard-shift-container">
+            <button type="button" class="keyboard-key keyboard-key-activatable keyboard-key-active keyboard-key-wide">
+                <i class="material-icons">keyboard_capslock</i>
+            </button>
+            <button type="button" class="keyboard-key">A</button>
+            <button type="button" class="keyboard-key">S</button>
+            <button type="button" class="keyboard-key">D</button>
+            <button type="button" class="keyboard-key">F</button>
+            <button type="button" class="keyboard-key">G</button>
+            <button type="button" class="keyboard-key">H</button>
+            <button type="button" class="keyboard-key">J</button>
+            <button type="button" class="keyboard-key">K</button>
+            <button type="button" class="keyboard-key">L</button>
+            <button type="button" class="keyboard-key">:</button>
+            <button type="button" class="keyboard-key">"</button>
+            <button type="button" class="keyboard-key keyboard-key-wide">Enter</button>
+        </div>
+
+        <div class="keyboard-keys keyboard-container" id="keyboard-shift-container">
+            <button type="button" class="keyboard-key keyboard-key-wide">
+                <i class="material-icons">tab bar</i>
+            </button>
+            <button type="button" class="keyboard-key">Q</button>
+            <button type="button" class="keyboard-key">W</button>
+            <button type="button" class="keyboard-key">E</button>
+            <button type="button" class="keyboard-key">R</button>
+            <button type="button" class="keyboard-key">T</button>
+            <button type="button" class="keyboard-key">Y</button>
+            <button type="button" class="keyboard-key">U</button>
+            <button type="button" class="keyboard-key">I</button>
+            <button type="button" class="keyboard-key">O</button>
+            <button type="button" class="keyboard-key">P</button>
+            <button type="button" class="keyboard-key">{</button>
+            <button type="button" class="keyboard-key">}</button>
+            <button type="button" class="keyboard-key">|</button>
+        </div>
+        <div class="keyboard-keys keyboard-container" id="keyboard-shift-container">
+            <button type="button" class="keyboard-key">~</button>
+            <button type="button" class="keyboard-key">!</button>
+            <button type="button" class="keyboard-key">@</button>
+            <button type="button" class="keyboard-key">#</button>
+            <button type="button" class="keyboard-key">$</button>
+            <button type="button" class="keyboard-key">%</button>
+            <button type="button" class="keyboard-key">^</button>
+            <button type="button" class="keyboard-key">&</button>
+            <button type="button" class="keyboard-key">*</button>
+            <button type="button" class="keyboard-key">(</button>
+            <button type="button" class="keyboard-key">)</button>
+            <button type="button" class="keyboard-key">_</button>
+            <button type="button" class="keyboard-key">+</button>
+        </div>
+
+    </div>
+
 </body>
+
 </html>
