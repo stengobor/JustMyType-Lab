@@ -11,6 +11,12 @@ h1 {
     color: darkmagenta;
 }
 
+#btn-submit {
+    align-items: center;
+    width: 100px;
+    height: 50px;
+}
+
   
 #prompt-container {
     font-family: Courier New, Courier, monospace;
@@ -21,102 +27,31 @@ h1 {
 #yellow-block {
     position: absolute;
     margin-top: 10px;
-    margin-left: 10px;
     width: 15px;
     height: 15px;
     background-color: yellow;
 }
   
-.container {
-    margin-top: 10px;
-    margin-right: 20px;
-    margin-left: 130px;
-    margin-bottom: 10px;
-}
+  .keyboard-container {
+    margin-top: 200px;
+  }
   
-
-#target-letter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 1200px;
-    height: 200px;
-    background-color: rgb(243, 81, 17);
-    border: 5px solid white;
+  #target-letter {
     font-size: 38px;  
-}
-
-.keyboard {
-    position: fixed;
-    height: 55%;
-    width: 100%;
-    padding: 5px 0;
-    background-color: rgb(1, 69, 255);
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-    user-select: none;
-    transition: bottom 0.4s;
-} 
-
-.keyboard-keys {
-    text-align: center;
-    align-items: center;
-}
-
-.keyboard-key {
-    height: 45px;
-    width: 6%;
-    margin: 3px;
-    border-radius: 4px;
-    border: none; 
-    background-color: rgb(152, 168, 235);
-    color: white;
-    font-size: 1.05rem;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: top;
-    padding: 0;
-    position: relative;
-}
-
-.keyboard-key:active {
-    background-color: rgb(70, 100, 236);
-}
-
-.keyboard-key-wide {
-    width: 10%;
-}
-.keyboard-key-exwide {
-    width: 20%;
-}
-
-.keyboard-key-activatable::after {
-    content: ' ';
-    top: 10px;
-    right: 10px;
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-}
-
-.keyboard-key-active::after {
-    background-color: yellow;
-}
-
-.keyboard-key-dark {
-    background-color: rgb(0, 0, 0, 0.25); 
-}
+  }
   
-#feedback {
+  .keys-row {
+    margin-top: 40px;
+    padding: 10px 0;
+  }
+  
+  #feedback {
     font-size: 20px;
-}
-.glyphicon-ok {
-    color: #2b2edf
-}
+  }
+  .glyphicon-ok {
+    color: #1DA237
+  }
   
-.glyphicon-remove {
-    color : #ff5e00
-}
+  .glyphicon-remove {
+    color : #CD2626
+  }
